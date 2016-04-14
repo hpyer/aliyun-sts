@@ -21,10 +21,15 @@ namespace Sts;
 
 use Sts\Core\RpcAcsRequest;
 
+use Sts\Core\Regions\Endpoint;
+use Sts\Core\Regions\EndpointProvider;
+use Sts\Core\Regions\ProductDomain;
+
 class AssumeRoleRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
+		$this->setEndpoints();
 		parent::__construct("Sts", "2015-04-01", "AssumeRole");
 		$this->setProtocol("https");
 	}
@@ -36,6 +41,37 @@ class AssumeRoleRequest extends RpcAcsRequest
 	private  $roleArn;
 
 	private  $roleSessionName;
+
+	private function setEndpoints() {
+		$regionIds = array("cn-hangzhou","cn-beijing","cn-qingdao","cn-hongkong","cn-shanghai","us-west-1","cn-shenzhen","ap-southeast-1");
+		$productDomains =array(
+			new ProductDomain("Ecs", "ecs.aliyuncs.com"),
+			new ProductDomain("Rds", "rds.aliyuncs.com"),
+			new ProductDomain("BatchCompute", "batchCompute.aliyuncs.com"),
+			new ProductDomain("Bss", "bss.aliyuncs.com"),
+			new ProductDomain("Oms", "oms.aliyuncs.com"),
+			new ProductDomain("Slb", "slb.aliyuncs.com"),
+			new ProductDomain("Oss", "oss-cn-hangzhou.aliyuncs.com"),
+			new ProductDomain("OssAdmin", "oss-admin.aliyuncs.com"),
+			new ProductDomain("Sts", "sts.aliyuncs.com"),
+			new ProductDomain("Yundun", "yundun-cn-hangzhou.aliyuncs.com"),
+			new ProductDomain("Risk", "risk-cn-hangzhou.aliyuncs.com"),
+			new ProductDomain("Drds", "drds.aliyuncs.com"),
+			new ProductDomain("M-kvstore", "m-kvstore.aliyuncs.com"),
+			new ProductDomain("Ram", "ram.aliyuncs.com"),
+			new ProductDomain("Cms", "metrics.aliyuncs.com"),
+			new ProductDomain("Crm", "crm-cn-hangzhou.aliyuncs.com"),
+			new ProductDomain("Ocs", "pop-ocs.aliyuncs.com"),
+			new ProductDomain("Ots", "ots-pop.aliyuncs.com"),
+			new ProductDomain("Dqs", "dqs.aliyuncs.com"),
+			new ProductDomain("Location", "location.aliyuncs.com"),
+			new ProductDomain("Ubsms", "ubsms.aliyuncs.com"),
+			new ProductDomain("Ubsms-inner", "ubsms-inner.aliyuncs.com")
+			);
+		$endpoint = new Endpoint("cn-hangzhou", $regionIds, $productDomains);
+		$endpoints = array($endpoint);
+		EndpointProvider::setEndpoints($endpoints);
+	}
 
 	public function getDurationSeconds() {
 		return $this->durationSeconds;

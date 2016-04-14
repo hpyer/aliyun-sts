@@ -19,8 +19,8 @@
  */
 namespace Sts\Core;
 
-use Sts\Core\ClientException;
-use Sts\Core\ServerException;
+use Sts\Core\Exception\ClientException;
+use Sts\Core\Exception\ServerException;
 use Sts\Core\Regions\EndpointProvider;
 use Sts\Core\Http\HttpHelper;
 
