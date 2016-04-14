@@ -21,8 +21,8 @@ namespace Sts\Core;
 
 use Sts\Core\ClientException;
 use Sts\Core\ServerException;
-use Sts\Regions\EndpointProvider;
-use Sts\Http\HttpHelper;
+use Sts\Core\Regions\EndpointProvider;
+use Sts\Core\Http\HttpHelper;
 
 class DefaultAcsClient implements IAcsClient 
 {	
