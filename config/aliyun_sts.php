@@ -16,13 +16,13 @@ return [
 	// Token所要拥有的权限
 	'policy' => [
 		"Statement" => [
-			{
+			[
 				"Action" => [
 					"oss:*"
 				],
 				"Effect" => "Allow",
 				"Resource" => ["acs:oss:*:*:*"]
-			}
+			]
 		],
 		"Version" => "1"
 	],
