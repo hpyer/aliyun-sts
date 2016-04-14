@@ -17,7 +17,7 @@
     "autoload": {
         "psr-4": {
             "Hpyer\\Aliyun\\Sts\\": "src",
-            "Sts\\": "src/aliyun-php-sdk-sts/Sts"
+            "Sts\\": "src/sdk"
         }
     },
     "extra": {
