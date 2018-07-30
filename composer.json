@@ -1,14 +1,14 @@
 {
-    "name": "hpyer/aliyun-sts",
+    "name": "GanymedeNil/aliyun-sts",
     "description": "Aliyun-STS SDK",
     "keywords": ["aliyun", "sts", "oss"],
-    "homepage": "http://github.com/hpyer/aliyun-sts",
+    "homepage": "http://github.com/GanymedeNil/aliyun-sts",
     "license": "MIT",
     "authors": [
         {
-            "name": "Hpyer",
-            "email": "me@hpyer.cn",
-            "homepage": "http://hpyer.cn"
+            "name": "GanymedeNil",
+            "email": "GanymedeNil@gmail.com",
+            "homepage": "http://www.GanymedeNil.com"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Hpyer\\Aliyun\\Sts\\": "src",
+            "GanymedeNil\\Aliyun\\Sts\\": "src",
             "Sts\\": "src/sdk"
         }
     },
